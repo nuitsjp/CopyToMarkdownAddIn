@@ -30,10 +30,15 @@ If it is not installed, it will be downloaded and installed from the installer.
 
 ### Downloaded  
 
-Github上にzip形式でインストーラーを置いてあります。  
-以下からダウンロードして回答し、setup.exeを実行してインストールしてください。  
+It is put the installer in zip format.
 
 [https://github.com/nuitsjp/CopyToMarkdownAddIn/releases:embed:cite]
 
-何かありましたら、ここにコメントか、Twitterにでも連絡ください。  
-それではまた！  
+Please install in the next procedure.
+
+1. Download the zip file
+2. Open the properties by right-clicking on the zip file.  
+3. Check the "Unblock" of property.
+4. Press the OK button to close the property.
+5. Unzip the zip file.  
+6. Run the setup.exe.
