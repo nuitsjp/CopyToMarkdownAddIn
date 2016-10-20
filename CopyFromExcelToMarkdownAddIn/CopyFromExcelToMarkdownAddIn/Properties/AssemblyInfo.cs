@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は、以下の属性セットによって 
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更します。
-[assembly: AssemblyTitle("Copy form Excel to Markdown AddIn")]
+[assembly: AssemblyTitle("Copy to Markdown AddIn")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("nuits.jp")]
-[assembly: AssemblyProduct("Copy form Excel to Markdown AddIn")]
+[assembly: AssemblyProduct("Copy to Markdown AddIn")]
 [assembly: AssemblyCopyright("Copyright © nuits.jp 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

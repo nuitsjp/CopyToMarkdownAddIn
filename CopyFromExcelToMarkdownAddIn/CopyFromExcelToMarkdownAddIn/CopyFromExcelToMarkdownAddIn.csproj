@@ -26,7 +26,7 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>CopyFromExcelToMarkdownAddIn</RootNamespace>
-    <AssemblyName>CopyFromExcelToMarkdownAddIn</AssemblyName>
+    <AssemblyName>Copy to Markdown AddIn</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>False</IsWebBootstrapper>
@@ -34,15 +34,15 @@
     <PublishUrl>C:\Users\z00h800459\Source\Repos\CopyFromExcelToMarkdownAddIn\publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>ja</TargetCulture>
-    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <ApplicationVersion>1.0.0.5</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>CopyFromExcelToMarkdownAddIn</ProductName>
-    <PublisherName />
+    <ProductName>Copy to Markdown AddIn</ProductName>
+    <PublisherName>nuits.jp</PublisherName>
     <SupportUrl />
-    <FriendlyName>CopyFromExcelToMarkdownAddIn</FriendlyName>
+    <FriendlyName>Copy to Markdown AddIn</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -190,6 +190,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CopyFromExcelToMarkdownAddIn_TemporaryKey.pfx" />
+    <None Include="nuits.jp.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,10 +218,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CopyFromExcelToMarkdownAddIn_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>nuits.jp.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CABDA7EEBAC3D128013792A879EE95A5861C0BE8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CE161AFC653C6B72C41350B96663BB1E91E173DC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -232,7 +233,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Excel" GeneratedCodeNamespace="CopyFromExcelToMarkdownAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" PublishedHash="CC91B31BC641E18A7E391B0BA09134AF7C38EB7E" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="CC91B31BC641E18A7E391B0BA09134AF7C38EB7E" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
