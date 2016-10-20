@@ -4,9 +4,8 @@ Copy from Excel to Markdown, is AddIn for Excel
 
 ![screenshot](docs/images/screenshot.gif)  
 
-Date format, amount, comma format. All you can directly copy!    
+Date format, amount, comma format, etc.. All you can directly copy!    
 Horizontal alignment is the same as the beginning of the line.  
-良かったら使ってあげてください。  
 
 ### Tested Platform  
 
