@@ -32,7 +32,7 @@ If it is not installed, it will be downloaded and installed from the installer.
 
 It is put the installer in zip format.
 
-[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases:embed:cite]
+[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases](https://github.com/nuitsjp/CopyToMarkdownAddIn/releases)
 
 Please install in the next procedure.
 
