@@ -29,12 +29,12 @@
     <AssemblyName>Copy to Markdown AddIn</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\z00h800459\Source\Repos\CopyFromExcelToMarkdownAddIn\publish\</PublishUrl>
-    <InstallUrl />
+    <PublishUrl>C:\Users\z00h800459\Source\Repos\CopyFromExcelToMarkdownAddIn\docs\</PublishUrl>
+    <InstallUrl>https://nuitsjp.github.io/CopyToMarkdownAddIn/</InstallUrl>
     <TargetCulture>ja</TargetCulture>
-    <ApplicationVersion>1.0.0.5</ApplicationVersion>
+    <ApplicationVersion>1.0.0.6</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
