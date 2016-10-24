@@ -78,17 +78,14 @@ namespace CopyFromExcelToMarkdownAddIn
                         resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text);
                         switch ((int)cell.HorizontalAlignment)
                         {
-                            case AlignmentLeft:
-                                separatorBuffer.Append("|-");
-                                break;
                             case AlignmentCenter:
                                 separatorBuffer.Append("|:-:");
                                 break;
                             case AlignmentRight:
-                                separatorBuffer.Append("|-:");
+                                separatorBuffer.Append("|--:");
                                 break;
                             default:
-                                separatorBuffer.Append("|-");
+                                separatorBuffer.Append("|:--");
                                 break;
                         }
                     }
