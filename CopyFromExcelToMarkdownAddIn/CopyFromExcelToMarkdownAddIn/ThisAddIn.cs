@@ -75,7 +75,7 @@ namespace CopyFromExcelToMarkdownAddIn
                         var cell = (Range)range.Cells[1, x];
 
                         resultBuffer.Append("|");
-                        resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text);
+                        resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text.Replace("\n", "<br>"));
                         switch ((int)cell.HorizontalAlignment)
                         {
                             case AlignmentLeft:
