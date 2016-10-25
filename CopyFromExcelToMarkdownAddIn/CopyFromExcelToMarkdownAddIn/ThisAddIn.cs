@@ -107,8 +107,7 @@ namespace CopyFromExcelToMarkdownAddIn
                             var cell = (Range)range.Cells[y, x];
 
                             resultBuffer.Append("|");
-                            var text = cell.Text.Replace(Environment.NewLine,"<br>")
-                            resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text.Replace(Environment.NewLine,"<br>"));
+                            resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text.Replace("\n","<br>"));
                         }
                         resultBuffer.Append("|");
                         resultBuffer.Append(Environment.NewLine);
