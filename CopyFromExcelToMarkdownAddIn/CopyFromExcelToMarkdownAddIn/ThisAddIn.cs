@@ -62,63 +62,73 @@ namespace CopyFromExcelToMarkdownAddIn
         private void CopyToMarkdown(CommandBarButton ctrl, ref bool cancelDefault)
         {
             var range = Application.Selection as Range;
-            if (range != null)
+            if (range == null)
             {
-                var rowsCount = range.Rows.Count;
-                if (MinRowCount <= rowsCount)
-                {
-                    var columnsCount = range.Count / rowsCount;
-                    var resultBuffer = new StringBuilder();
-                    var separatorBuffer = new StringBuilder();
-                    for (int x = 1; x <= columnsCount; x++)
-                    {
-                        var cell = (Range)range.Cells[1, x];
+                MessageBox.Show(Properties.Resources.UnselectedErrorMessage);
+                return;
+            }
+            
+            var rowsCount = range.Rows.Count;
+            if (rowsCount < MinRowCount)
+            {
+                MessageBox.Show(Properties.Resources.UnselectedErrorMessage);
+                return;
+            }
 
-                        resultBuffer.Append("|");
-                        resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text.Replace("\n", "<br>"));
-                        switch ((int)cell.HorizontalAlignment)
-                        {
-                            case AlignmentCenter:
-                                separatorBuffer.Append("|:-:");
-                                break;
-                            case AlignmentRight:
-                                separatorBuffer.Append("|--:");
-                                break;
-                            default:
-                                separatorBuffer.Append("|:--");
-                                break;
-                        }
-                    }
-                    // Partition of the header and data lines.
-                    // Process only after the first line.
+            var columnsCount = range.Count / rowsCount;
+            var resultBuffer = new StringBuilder();
+            var separatorBuffer = new StringBuilder();
+            for (int x = 1; x <= columnsCount; x++)
+            {
+                var cell = (Range)range.Cells[1, x];
+
+                resultBuffer.Append("|");
+                resultBuffer.Append(FormatText(cell));
+                switch ((int)cell.HorizontalAlignment)
+                {
+                    case AlignmentCenter:
+                        separatorBuffer.Append("|:-:");
+                        break;
+                    case AlignmentRight:
+                        separatorBuffer.Append("|--:");
+                        break;
+                    default:
+                        separatorBuffer.Append("|:--");
+                        break;
+                }
+            }
+            // Partition of the header and data lines.
+            // Process only after the first line.
+            resultBuffer.Append("|");
+            resultBuffer.Append(Environment.NewLine);
+            separatorBuffer.Append("|");
+            separatorBuffer.Append(Environment.NewLine);
+            resultBuffer.Append(separatorBuffer);
+
+            for (int y = 2; y <= rowsCount; y++)
+            {
+                for (int x = 1; x <= columnsCount; x++)
+                {
+                    var cell = (Range)range.Cells[y, x];
+
                     resultBuffer.Append("|");
-                    resultBuffer.Append(Environment.NewLine);
-                    separatorBuffer.Append("|");
-                    separatorBuffer.Append(Environment.NewLine);
-                    resultBuffer.Append(separatorBuffer);
-
-                    for (int y = 2; y <= rowsCount; y++)
-                    {
-                        for (int x = 1; x <= columnsCount; x++)
-                        {
-                            var cell = (Range)range.Cells[y, x];
-
-                            resultBuffer.Append("|");
-                            resultBuffer.Append(cell.Text == null ? string.Empty : cell.Text.Replace("\n","<br>"));
-                        }
-                        resultBuffer.Append("|");
-                        resultBuffer.Append(Environment.NewLine);
-                    }
-                    Clipboard.SetText(resultBuffer.ToString());
+                    resultBuffer.Append(FormatText(cell));
                 }
-                else
-                {
-                    MessageBox.Show(Properties.Resources.UnselectedErrorMessage);
-                }
+                resultBuffer.Append("|");
+                resultBuffer.Append(Environment.NewLine);
+            }
+            Clipboard.SetText(resultBuffer.ToString());
+        }
+
+        private static string FormatText(Range range)
+        {
+            if (range == null || range.Text == null)
+            {
+                return string.Empty;
             }
             else
             {
-                MessageBox.Show(Properties.Resources.UnselectedErrorMessage);
+                return range.Text.Replace("\n", "<br>");
             }
         }
 
