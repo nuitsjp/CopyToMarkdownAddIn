@@ -1,44 +1,54 @@
 # Copy to Markdown AddIn
 
-Copy from Excel to Markdown, is AddIn for Excel
+選択したExcelのセルをMarkdown形式でコピーするExcelアドインです。  
 
-![screenshot](docs/images/screenshot.gif)  
+![screenshot](https://cdn-ak.f.st-hatena.com/images/fotolife/n/nuitsjp/20161020/20161020121709.gif)  
 
-Date format, amount, comma format, etc.. All you can directly copy!    
-Horizontal alignment is the same as the beginning of the line.  
+日付の書式、金額、カンマフォーマットなども生かしたままコピーできます。  
+右寄せ・左寄はヘッダー行の設定に従います。  
+Markdown形式のブログでテーブルを記述する際などにご利用ください。  
 
-### Tested Platform  
+### 動作確認済みのOffice＆Windows  
 
 * Windows 7 64bit & Office 2010  
 * Windows 10 64bit & Office 2016
 
-
-### Requirements  
+### 必要環境  
 
 * .NET Framework 4.5.2以上  
-* Visual Studio 2010 Tools for Office Runtime
+* Visual Studio 2010 Tools for Office Runtimeのインストールが求められるかもしれません  
+  
+上記モジュールがインストールされていない場合、インストーラーからダウンロードされてインストールされる可能性があります。  
 
-If it is not installed, it will be downloaded and installed from the installer.  
 
+### 操作方法  
 
-### How to use  
+貼り付けたい範囲を選択して、右クリックから「Copy to Markdown」を選択して、あとは好きなところに貼り付けましょう！  
+それだけです。  
 
-1. Select a range in Excel. 
-2. Right click. 
-3. Select "Copy to Markdown". 
-4. Paste to a favorite place!
+### ダウンロード  
 
-### Downloaded  
+Github上にzip形式でインストーラーを置いてあります。  
 
-It is put the installer in zip format.
+1. 以下からダウンロードする  
+(https://github.com/nuitsjp/CopyToMarkdownAddIn/releases)[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases]
+2. <span style="color: #ff0000"><b>zipファイル右クリックしてプロパティを開き、「ブロックの解除」のチェックをONにする</b></span>  
+3. setup.exeを実行する  
 
-[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases](https://github.com/nuitsjp/CopyToMarkdownAddIn/releases)
+<b><span style="color: #ff0000">※要注意※  
+zipファイルのダウンロード後、展開する前に必ずファイルのプロパティを開き、「ブロックの解除」をチェックした上で「OK」ボタンを押してください。  
+</span></b>
+[f:id:nuitsjp:20161020160401p:plain]
 
-Please install in the next procedure.
+### ライセンス  
 
-1. Download the zip file
-2. Open the properties by right-clicking on the zip file.  
-3. Check the "Unblock" of property.
-4. Press the OK button to close the property.
-5. Unzip the zip file.  
-6. Run the setup.exe.
+個人・商用に関わらず完全に無料でお使いいただけます。  
+
+### お問い合わせ先  
+
+何かありましたら  
+
+* Issue欄  
+* Twitter：[@nuits_jp](https://twitter.com/nuits_jp)
+
+いずれかに連絡ください。  
