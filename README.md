@@ -2,6 +2,8 @@
 
 Copy from Excel to Markdown, is AddIn for Excel
 
+[The Japanese document is here.](https://github.com/nuitsjp/CopyToMarkdownAddIn/blob/master/README-jp.md)
+
 ![screenshot](docs/images/screenshot.gif)  
 
 Date format, amount, comma format, etc.. All you can directly copy!    
