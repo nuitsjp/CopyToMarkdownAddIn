@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
+<OfficeApp 
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+          xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+          xsi:type="TaskPaneApp">
+
+  <!-- 基本設定の開始: オーバーライドが提供されない限りすべてのバージョンの Office で使用される、アドインのメタデータ。 -->
+
+  <!-- 重要! アドインの ID は一意である必要があります。このマニフェストを再利用する場合は、この ID を新しい GUID に変更してください。 -->
+  <Id>00ef5612-ecfe-4777-bb04-8f01c56aa12c</Id>
+
+  <!--バージョン。ストアから更新がトリガーされるのは、バージョンに変更があった場合だけです。 -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>[プロバイダー名]</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- アドインの表示名。ストアのほか、Office UI のさまざまな場所 (アドイン ダイアログなど) で使われます。 -->
+  <DisplayName DefaultValue="CopyToMarkdownAddIn" />
+  <Description DefaultValue="CopyToMarkdownAddIn"/>
+  <!-- アドインのアイコン。インストール画面やアドイン ダイアログで使います。 -->
+  <IconUrl DefaultValue="~remoteAppUrl/Images/Table32x32.png" />
+
+  <SupportUrl DefaultValue="http://www.contoso.com" />
+  <!-- ナビゲーションで許可されるドメイン。たとえば、ShowTaskpane を使った href リンクによるナビゲーションは、ドメインがこの一覧に含まれている場合にのみ許可されます。 -->
+  <AppDomains>
+    <AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>
+    <AppDomain>AppDomain3</AppDomain>
+  </AppDomains>
+  <!--基本設定の終了。 -->
+  
+  <!--TaskPane モードの統合の開始。このセクションは、VersionOverrides がない場合か、Office クライアント バージョンがアドイン コマンドをサポートしない場合に使用します。 -->
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/Home.html" />
+  </DefaultSettings>
+  <!-- TaskPane モードの統合の終了。  -->
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!-- アドイン コマンド モードの統合の開始。 -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    
+    <!-- ホスト ノードが必須です。 -->
+    <Hosts>
+      <!-- 各ホストは、異なったセットのコマンドを持つ可能性があります。 -->
+      <!-- Excel ホストはブック、Word ホストは文書、PowerPoint ホストはプレゼンテーションです。 -->
+      <!-- 上書きするホストが、マニフェストの最上位セクションで宣言されているホストと一致することを確認してください。 -->
+      <Host xsi:type="Workbook">
+        <!-- フォーム ファクター。現在サポートされているのは、DesktopFormFactor のみです。 -->
+        <DesktopFormFactor>
+          <!-- 関数ファイルは、ExecuteAction の関数が呼び出される JavaScript を含んだ HTML ページです。             FunctionFile は、コードビハインド ExecuteFunction と考えることができます。 -->
+          <FunctionFile resid="Contoso.DesktopFunctionFile.Url" />
+
+          <!-- PrimaryCommandSurface は Office のメイン リボンです。 -->
+          <ExtensionPoint xsi:type="ContextMenu">
+            <!-- OfficeTab を使って既存のタブを拡張します。CustomTab を使って新しいタブを作成します。 -->
+            <OfficeMenu id="ContextMenuCell">
+              <!-- グループに一意の ID を割り当てたことを確認してください。すべての ID の名前空間には会社名を使用することをお勧めします。 -->
+              <!-- コントロール。種類としては "Button" と "Menu" を利用できます。 -->
+              <Control xsi:type="Button" id="Contoso.TaskpaneButton">
+                <Label resid="Contoso.TaskpaneButton.Label" />
+                <Supertip>
+                  <!-- ヒントのタイトル。resid は、短い文字列リソースをポイントしている必要があります。 -->
+                  <Title resid="Contoso.TaskpaneButton.Label" />
+                  <!-- ヒントの説明。resid は、長い文字列リソースをポイントしている必要があります。 -->
+                  <Description resid="Contoso.TaskpaneButton.Tooltip" />
+                </Supertip>
+                <Icon>
+                  <!--
+                  -->
+                  <bt:Image size="16" resid="Contoso.tpicon_16x16" />
+                  <bt:Image size="32" resid="Contoso.tpicon_32x32" />
+                  <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+                  <bt:Image size="512" resid="Contoso.tpicon_512x512" />
+                </Icon>
+
+                <!-- コマンドがトリガーされた (たとえば、リボンがクリックされた) ときに実行される内容です。サポートされるアクションは、ExecuteFunction または ShowTaskpane です。 -->
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>copyToMarkdown</FunctionName>
+                </Action>
+              </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    
+    <!-- 複数のホストやフォーム ファクターをまたいでリソースを利用できます。 -->
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Table16x16.png" />
+        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Table32x32.png" />
+        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Table80x80.png" />
+        <bt:Image id="Contoso.tpicon_512x512" DefaultValue="~remoteAppUrl/Images/Table512x512.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Contoso.DesktopFunctionFile.Url" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html" />
+        <bt:Url id="Contoso.Taskpane.Url" DefaultValue="~remoteAppUrl/Home.html" />
+      </bt:Urls>
+      <!-- 短い文字列の最大文字数==125。 -->
+      <bt:ShortStrings>
+        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Copy to Markdown" />
+      </bt:ShortStrings>
+      <!-- 長い文字列の最大文字数==250。 -->
+      <bt:LongStrings>
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Copy the selected range to Markdown format" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+  <!-- アドイン コマンド モードの統合の終了。 -->
+
+</OfficeApp>
