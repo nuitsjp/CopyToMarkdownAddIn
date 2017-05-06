@@ -1,4 +1,4 @@
-Copy to Markdown Privacy Policy
+# Copy to Markdown Privacy Policy
 I care about your privacy.
 
 I am committed to respecting your privacy. This privacy policy pertains to Copy to Markdown Add-In as purchased via the Microsoft Office store or by any other means.
