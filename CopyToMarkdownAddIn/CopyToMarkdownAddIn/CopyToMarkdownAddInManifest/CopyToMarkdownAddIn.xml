@@ -14,20 +14,18 @@
 
   <!--バージョン。ストアから更新がトリガーされるのは、バージョンに変更があった場合だけです。 -->
   <Version>1.0.0.0</Version>
-  <ProviderName>[プロバイダー名]</ProviderName>
+  <ProviderName>nuits.jp</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- アドインの表示名。ストアのほか、Office UI のさまざまな場所 (アドイン ダイアログなど) で使われます。 -->
-  <DisplayName DefaultValue="CopyToMarkdownAddIn" />
-  <Description DefaultValue="CopyToMarkdownAddIn"/>
+  <DisplayName DefaultValue="Copy to Markdown" />
+  <Description DefaultValue="Copy selected range to Markdown format."/>
   <!-- アドインのアイコン。インストール画面やアドイン ダイアログで使います。 -->
   <IconUrl DefaultValue="~remoteAppUrl/Images/Table32x32.png" />
 
-  <SupportUrl DefaultValue="http://www.contoso.com" />
+  <SupportUrl DefaultValue="https://github.com/nuitsjp/CopyToMarkdownAddIn" />
   <!-- ナビゲーションで許可されるドメイン。たとえば、ShowTaskpane を使った href リンクによるナビゲーションは、ドメインがこの一覧に含まれている場合にのみ許可されます。 -->
   <AppDomains>
-    <AppDomain>AppDomain1</AppDomain>
-    <AppDomain>AppDomain2</AppDomain>
-    <AppDomain>AppDomain3</AppDomain>
+    <AppDomain>nuits.jp</AppDomain>
   </AppDomains>
   <!--基本設定の終了。 -->
   
@@ -108,7 +106,7 @@
       </bt:ShortStrings>
       <!-- 長い文字列の最大文字数==250。 -->
       <bt:LongStrings>
-        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Copy the selected range to Markdown format" />
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Copy selected range to Markdown format" />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
