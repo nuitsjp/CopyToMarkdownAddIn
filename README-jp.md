@@ -31,7 +31,7 @@ Markdown形式のブログでテーブルを記述する際などにご利用く
 Github上にzip形式でインストーラーを置いてあります。  
 
 1. 以下からダウンロードする  
-(https://github.com/nuitsjp/CopyToMarkdownAddIn/releases)[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases]
+[https://github.com/nuitsjp/CopyToMarkdownAddIn/releases](https://github.com/nuitsjp/CopyToMarkdownAddIn/releases)
 2. <span style="color: #ff0000"><b>zipファイル右クリックしてプロパティを開き、「ブロックの解除」のチェックをONにする</b></span>  
 3. setup.exeを実行する  
 
