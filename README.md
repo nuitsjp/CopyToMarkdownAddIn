@@ -1,6 +1,6 @@
 # Copy to Markdown AddIn
 
-Copy from Excel to Markdown, is AddIn for Excel
+AddIn for Excel to copy from Excel to Markdown.
 
 [The Japanese document is here.](https://github.com/nuitsjp/CopyToMarkdownAddIn/blob/master/README-jp.md)
 
