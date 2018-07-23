@@ -74,6 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\GridParserFixture_HasNotAlignmentRows.md" />
+    <None Include="Resources\GridParserFixture_HasAlignmentRows.md" />
     <None Include="Resources\GridParserFixture_Case01.md" />
   </ItemGroup>
   <ItemGroup>

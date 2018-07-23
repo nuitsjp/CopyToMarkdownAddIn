@@ -61,14 +61,34 @@ namespace CopyFromExcelToMarkdownAddIna.Test.Properties {
         }
         
         /// <summary>
-        ///   |1-1|
-        ///|2-1|2-2
-        ///3-1||3-3|
+        ///    |0-1| 
+        ///|1-1|1-2
+        ///2-1||2-3|
         /// に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string GridParserFixture_Case01 {
             get {
                 return ResourceManager.GetString("GridParserFixture_Case01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    |0-1| 
+        /// |:-|-|:-:|-:|  に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GridParserFixture_HasAlignmentRows {
+            get {
+                return ResourceManager.GetString("GridParserFixture_HasAlignmentRows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    |0-1| 
+        /// |:-|-a|:-:|-:|  に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string GridParserFixture_HasNotAlignmentRows {
+            get {
+                return ResourceManager.GetString("GridParserFixture_HasNotAlignmentRows", resourceCulture);
             }
         }
     }

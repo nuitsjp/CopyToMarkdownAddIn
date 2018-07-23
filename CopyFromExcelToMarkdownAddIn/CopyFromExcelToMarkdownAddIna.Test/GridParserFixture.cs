@@ -40,7 +40,23 @@ namespace CopyFromExcelToMarkdownAddIna.Test
             Assert.Equal(string.Empty, row2[1].Value);
             Assert.NotNull(row2[2]);
             Assert.Equal("2-3", row2[2].Value);
-
         }
+
+        [Fact]
+        public void HasAlignmentRow()
+        {
+            var grid = new GridParser().Parse(Properties.Resources.GridParserFixture_HasAlignmentRows);
+            Assert.NotNull(grid);
+            Assert.True(grid.HasAlignmentRows);
+        }
+
+        [Fact]
+        public void HasNotAlignmentRow()
+        {
+            var grid = new GridParser().Parse(Properties.Resources.GridParserFixture_HasNotAlignmentRows);
+            Assert.NotNull(grid);
+            Assert.False(grid.HasAlignmentRows);
+        }
+
     }
 }

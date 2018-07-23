@@ -121,4 +121,10 @@
   <data name="GridParserFixture_Case01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gridparserfixture_case01.md;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="GridParserFixture_HasAlignmentRows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\gridparserfixture_hasalignmentrows.md;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GridParserFixture_HasNotAlignmentRows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\gridparserfixture_hasnotalignmentrows.md;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

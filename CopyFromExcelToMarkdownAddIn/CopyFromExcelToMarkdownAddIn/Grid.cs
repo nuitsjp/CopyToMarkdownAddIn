@@ -12,6 +12,8 @@ namespace CopyFromExcelToMarkdownAddIn
 
         public IReadOnlyList<Row> Rows => _rows;
 
+        public bool HasAlignmentRows => 1 < _rows.Count && _rows[1].Count(x => !x.IsAlignment) == 0;
+
         public void AddRow(Row row) => _rows.Add(row);
-    }
+   }
 }
