@@ -2,7 +2,7 @@
 
 選択したExcelのセルをMarkdown形式でコピーするExcelアドインです。  
 
-![screenshot](docs/images/screenshot.gif)  
+![screenshot](docs/images/screenshot.ja-JP.gif)  
 
 日付の書式、金額、カンマフォーマットなども生かしたままコピーできます。  
 右寄せ・左寄はヘッダー行の設定に従います。  
@@ -38,7 +38,7 @@ Github上にzip形式でインストーラーを置いてあります。
 <b><span style="color: #ff0000">※要注意※  
 zipファイルのダウンロード後、展開する前に必ずファイルのプロパティを開き、「ブロックの解除」をチェックした上で「OK」ボタンを押してください。  
 </span></b>
-[f:id:nuitsjp:20161020160401p:plain]
+![](docs/images/zip.png)
 
 ### ライセンス  
 
