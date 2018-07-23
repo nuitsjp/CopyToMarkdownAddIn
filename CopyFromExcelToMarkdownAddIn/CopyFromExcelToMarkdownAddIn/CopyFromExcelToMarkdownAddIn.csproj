@@ -178,6 +178,7 @@
     <Compile Include="GridCell.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="GridParser.cs" />
+    <Compile Include="Alignment.cs" />
     <Compile Include="TableCell.cs" />
     <Compile Include="TableParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

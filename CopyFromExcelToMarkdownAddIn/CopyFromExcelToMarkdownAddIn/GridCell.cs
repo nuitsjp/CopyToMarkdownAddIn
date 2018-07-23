@@ -10,12 +10,39 @@ namespace CopyFromExcelToMarkdownAddIn
     {
         public string Value { get; }
 
-        public bool IsAlignment =>
-            System.Text.RegularExpressions.Regex.IsMatch(Value, "^:?-+:?$");
+        public bool IsAlignment { get; }
+            
+
+        public Alignment Alignment { get; }
 
         public GridCell(string value)
         {
             Value = value;
+            if (System.Text.RegularExpressions.Regex.IsMatch(Value, "^-+$"))
+            {
+                IsAlignment = true;
+                Alignment = Alignment.Undefined;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(Value, "^:?-+$"))
+            {
+                IsAlignment = true;
+                Alignment = Alignment.Left;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(Value, "^:-+:$"))
+            {
+                IsAlignment = true;
+                Alignment = Alignment.Center;
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(Value, "^-+:?$"))
+            {
+                IsAlignment = true;
+                Alignment = Alignment.Right;
+            }
+            else
+            {
+                IsAlignment = false;
+                Alignment = Alignment.Undefined;
+            }
         }
     }
 }
