@@ -1,6 +1,6 @@
 # Copy to Markdown AddIn
 
-選択したExcelのセルをMarkdown形式でコピーするExcelアドインです。  
+選択したExcelのセルをMarkdown形式へコピーと、逆にMarkdown形式の表をExcelに双方向にコピーするExcelアドインです。  
 
 ![screenshot](docs/images/screenshot.ja-JP.gif)  
 
