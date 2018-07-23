@@ -16,7 +16,7 @@ namespace CopyFromExcelToMarkdownAddIn
             using (var reader = new StringReader(markdown))
             for(var line = reader.ReadLine(); line != null; line = reader.ReadLine())
             {
-                grid.AddRow(new Row(TrimPipe(line).Split('|').Select(x => new Cell(x))));
+                grid.AddRow(new GridRow(TrimPipe(line).Split('|').Select(x => new GridCell(x))));
             }
 
             return grid;

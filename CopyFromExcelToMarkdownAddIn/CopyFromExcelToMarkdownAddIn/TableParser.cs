@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CopyFromExcelToMarkdownAddIn
 {
-    public class Row : List<Cell>
+    public class TableParser
     {
-        public Row(IEnumerable<Cell> cells)
+        public Table Parse(Grid grid)
         {
-            AddRange(cells);
+            return null;
         }
     }
 }

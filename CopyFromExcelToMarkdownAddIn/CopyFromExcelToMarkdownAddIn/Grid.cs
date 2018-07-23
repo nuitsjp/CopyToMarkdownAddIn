@@ -8,12 +8,12 @@ namespace CopyFromExcelToMarkdownAddIn
 {
     public class Grid
     {
-        private readonly List<Row> _rows = new List<Row>();
+        private readonly List<GridRow> _rows = new List<GridRow>();
 
-        public IReadOnlyList<Row> Rows => _rows;
+        public IReadOnlyList<GridRow> Rows => _rows;
 
         public bool HasAlignmentRows => 1 < _rows.Count && _rows[1].Count(x => !x.IsAlignment) == 0;
 
-        public void AddRow(Row row) => _rows.Add(row);
+        public void AddRow(GridRow row) => _rows.Add(row);
    }
 }

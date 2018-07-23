@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CopyFromExcelToMarkdownAddIn
 {
-    public class Cell
+    public class GridCell
     {
         public string Value { get; }
 
         public bool IsAlignment =>
             System.Text.RegularExpressions.Regex.IsMatch(Value, "^:?-+:?$");
 
-        public Cell(string value)
+        public GridCell(string value)
         {
             Value = value;
         }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CopyFromExcelToMarkdownAddIn
 {
-    public class Table
+    public class GridRow : List<GridCell>
     {
-        public GridRow Header { get; }
-        public IList<GridRow> Rows { get; } = new List<GridRow>();
+        public GridRow(IEnumerable<GridCell> cells) => AddRange(cells);
     }
 }

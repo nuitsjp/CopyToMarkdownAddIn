@@ -175,10 +175,11 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Cell.cs" />
+    <Compile Include="GridCell.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="GridParser.cs" />
-    <Compile Include="MarkdownTableParser.cs" />
+    <Compile Include="TableCell.cs" />
+    <Compile Include="TableParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -200,8 +201,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Row.cs" />
+    <Compile Include="GridRow.cs" />
     <Compile Include="Table.cs" />
+    <Compile Include="TableRow.cs" />
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>

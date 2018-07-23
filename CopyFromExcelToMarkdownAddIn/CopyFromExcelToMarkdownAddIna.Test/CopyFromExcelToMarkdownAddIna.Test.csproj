@@ -56,9 +56,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CellFixture.cs" />
+    <Compile Include="GridCellFixture.cs" />
     <Compile Include="GridParserFixture.cs" />
-    <Compile Include="MarkdownTableParserFixture.cs" />
+    <Compile Include="TableParserFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

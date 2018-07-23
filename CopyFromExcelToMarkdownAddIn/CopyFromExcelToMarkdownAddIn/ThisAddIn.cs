@@ -38,7 +38,7 @@ namespace CopyFromExcelToMarkdownAddIn
         {
             // Create button in ContextMenu
             var menuItem = MsoControlType.msoControlButton;
-            _copyToMarkdownButton = (CommandBarButton)Application.CommandBars["Cell"].Controls.Add(menuItem, missing, missing, 1, true);
+            _copyToMarkdownButton = (CommandBarButton)Application.CommandBars["GridCell"].Controls.Add(menuItem, missing, missing, 1, true);
             _copyToMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
             _copyToMarkdownButton.Caption = "Copy to Markdown";
             _copyToMarkdownButton.Tag = "0";
