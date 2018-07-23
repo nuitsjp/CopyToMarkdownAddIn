@@ -29,12 +29,12 @@
     <AssemblyName>Copy to Markdown AddIn</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
-    <IsWebBootstrapper>True</IsWebBootstrapper>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Repos\CopyToMarkdownAddIn\docs\</PublishUrl>
-    <InstallUrl>https://nuitsjp.github.io/CopyToMarkdownAddIn/</InstallUrl>
+    <PublishUrl>C:\Repos\CopyToMarkdownAddIn\release\</PublishUrl>
+    <InstallUrl />
     <TargetCulture>ja</TargetCulture>
-    <ApplicationVersion>1.0.2.5</ApplicationVersion>
+    <ApplicationVersion>2.0.0.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
