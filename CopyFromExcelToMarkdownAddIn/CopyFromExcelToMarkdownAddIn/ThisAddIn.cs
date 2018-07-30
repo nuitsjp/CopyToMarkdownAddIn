@@ -30,14 +30,23 @@ namespace CopyFromExcelToMarkdownAddIn
         private const int AlignmentRight = -4152;
 
         /// <summary>
-        /// Button in ContextMenu.
+        /// Button in ContextMenu for Cell.
         /// </summary>
-        private CommandBarButton _copyToMarkdownButton;
+        private CommandBarButton _copyToMarkdownButtonForCell;
+        /// <summary>
+        /// Button in ContextMenu for Table.
+        /// </summary>
+        private CommandBarButton _copyToMarkDownButtonForTable;
 
         /// <summary>
-        /// Button in ContextMenu.
+        /// Button in ContextMenu for Cell.
         /// </summary>
-        private CommandBarButton _copyFromMarkdownButton;
+        private CommandBarButton _copyFromMarkdownButtonForCell;
+        /// <summary>
+        /// Button in ContextMenu for Table.
+        /// </summary>
+        private CommandBarButton _copyFromMarkdownButtonForTable;
+
         /// <summary>
         /// Startup event handler
         /// </summary>
@@ -45,18 +54,34 @@ namespace CopyFromExcelToMarkdownAddIn
         /// <param name="e"></param>
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
-            // Create button in ContextMenu
-            _copyToMarkdownButton = (CommandBarButton)Application.CommandBars["Cell"].Controls.Add(MsoControlType.msoControlButton, missing, missing, 1, true);
-            _copyToMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
-            _copyToMarkdownButton.Caption = "Copy to Markdown";
-            _copyToMarkdownButton.Tag = "0";
-            _copyToMarkdownButton.Click += CopyToMarkdown;
+            const string CELL = "Cell";
+            const string TABLE = "List Range Popup";
 
-            _copyFromMarkdownButton = (CommandBarButton)Application.CommandBars["Cell"].Controls.Add(MsoControlType.msoControlButton, missing, missing, 2, true);
-            _copyFromMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
-            _copyFromMarkdownButton.Caption = "Copy from Markdown";
-            _copyFromMarkdownButton.Tag = "1";
-            _copyFromMarkdownButton.Click += CopyFromMarkdown;
+            // Create button in ContextMenu for Cell
+            _copyToMarkdownButtonForCell = CreateCopyToMarkdownButton(CELL, "0");
+            _copyFromMarkdownButtonForCell = CreateCopyFromMarkdownButton(CELL, "1");
+            // Create button in ContextMenu for Table
+            _copyToMarkDownButtonForTable = CreateCopyToMarkdownButton(TABLE, "2");
+            _copyFromMarkdownButtonForTable = CreateCopyFromMarkdownButton(TABLE, "3");
+        }
+
+        private CommandBarButton CreateCopyToMarkdownButton(string commandBarsKey, string tag)
+        {
+            var copyToMarkdownButton = (CommandBarButton)Application.CommandBars[commandBarsKey].Controls.Add(MsoControlType.msoControlButton, missing, missing, 1, true);
+            copyToMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
+            copyToMarkdownButton.Caption = "Copy to Markdown";
+            copyToMarkdownButton.Tag = tag;
+            copyToMarkdownButton.Click += CopyToMarkdown;
+            return copyToMarkdownButton;
+        }
+        private CommandBarButton CreateCopyFromMarkdownButton(string commandBarsKey, string tag)
+        {
+            var copyFromMarkdownButton = (CommandBarButton)Application.CommandBars[commandBarsKey].Controls.Add(MsoControlType.msoControlButton, missing, missing, 2, true);
+            copyFromMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
+            copyFromMarkdownButton.Caption = "Copy from Markdown";
+            copyFromMarkdownButton.Tag = tag;
+            copyFromMarkdownButton.Click += CopyFromMarkdown;
+            return copyFromMarkdownButton;
         }
 
         private void CopyFromMarkdown(CommandBarButton ctrl, ref bool canceldefault)
