@@ -78,7 +78,7 @@ namespace CopyFromExcelToMarkdownAddIn
         {
             var copyFromMarkdownButton = (CommandBarButton)Application.CommandBars[commandBarsKey].Controls.Add(MsoControlType.msoControlButton, missing, missing, 2, true);
             copyFromMarkdownButton.Style = MsoButtonStyle.msoButtonCaption;
-            copyFromMarkdownButton.Caption = "Copy from Markdown";
+            copyFromMarkdownButton.Caption = "Paste from Markdown";
             copyFromMarkdownButton.Tag = tag;
             copyFromMarkdownButton.Click += CopyFromMarkdown;
             return copyFromMarkdownButton;
@@ -107,7 +107,7 @@ namespace CopyFromExcelToMarkdownAddIn
                 {
                     var cell = row[j];
                     var activeSheetCell =  (Range)activeSheet.Cells[range.Row + i, range.Column + j];
-                    activeSheetCell.Value2 = cell.Value.Replace("<br>", Environment.NewLine).Replace("<br/>", Environment.NewLine);
+                    activeSheetCell.Value2 = cell.Value.Replace("<br>", "\n").Replace("<br/>", "\n");
                     switch (cell.Alignment)
                     {
                         case Alignment.Undefined:
