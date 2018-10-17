@@ -34,7 +34,7 @@
     <PublishUrl>C:\Repos\CopyToMarkdownAddIn\release\</PublishUrl>
     <InstallUrl />
     <TargetCulture>ja</TargetCulture>
-    <ApplicationVersion>2.1.0.1</ApplicationVersion>
+    <ApplicationVersion>2.1.1.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
