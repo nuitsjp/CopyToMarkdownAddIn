@@ -20,7 +20,7 @@ Horizontal alignment is the same as the beginning of the line.
 
 ### Requirements  
 
-* .NET Framework 4.5.2以上  
+* .NET Framework 4.5.2 or higher
 * Visual Studio 2010 Tools for Office Runtime
 
 If it is not installed, it will be downloaded and installed from the installer.  
