@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyFromExcelToMarkdownAddIn", "CopyFromExcelToMarkdownAddIn\CopyFromExcelToMarkdownAddIn.csproj", "{29D7771E-0284-4D67-9E25-AC300B49E504}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyFromExcelToMarkdownAddIna.Test", "CopyFromExcelToMarkdownAddIna.Test\CopyFromExcelToMarkdownAddIna.Test.csproj", "{B0DA5DDD-2405-4DDE-9D04-2B5265F837E2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfficeAddInSetup", "OfficeAddInSetup\OfficeAddInSetup.vdproj", "{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,11 @@ Global
 		{B0DA5DDD-2405-4DDE-9D04-2B5265F837E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0DA5DDD-2405-4DDE-9D04-2B5265F837E2}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{B0DA5DDD-2405-4DDE-9D04-2B5265F837E2}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.CD_ROM|Any CPU.ActiveCfg = Release
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.Debug|Any CPU.ActiveCfg = Debug
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.DVD-5|Any CPU.ActiveCfg = Debug
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.Release|Any CPU.ActiveCfg = Release
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
