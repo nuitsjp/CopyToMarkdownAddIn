@@ -42,6 +42,7 @@ Global
 		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.Debug|Any CPU.ActiveCfg = Debug
 		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.DVD-5|Any CPU.ActiveCfg = Debug
 		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.Release|Any CPU.ActiveCfg = Release
+		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.Release|Any CPU.Build.0 = Release
 		{D49B1C80-17DF-4CA8-AE8F-AA62D681142B}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
