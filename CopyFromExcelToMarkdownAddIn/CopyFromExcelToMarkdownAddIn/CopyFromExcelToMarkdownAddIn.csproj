@@ -32,10 +32,10 @@
     <IsWebBootstrapper>False</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Repos\CopyToMarkdownAddIn\release\</PublishUrl>
+    <PublishUrl>release\</PublishUrl>
     <InstallUrl />
     <TargetCulture>ja</TargetCulture>
-    <ApplicationVersion>2.1.1.3</ApplicationVersion>
+    <ApplicationVersion>2.1.2.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -185,6 +185,7 @@
     <Compile Include="Grid.cs" />
     <Compile Include="GridParser.cs" />
     <Compile Include="Alignment.cs" />
+    <Compile Include="RangeExtensions.cs" />
     <Compile Include="TableCell.cs" />
     <Compile Include="TableParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -254,7 +255,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Excel" GeneratedCodeNamespace="CopyFromExcelToMarkdownAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="CC91B31BC641E18A7E391B0BA09134AF7C38EB7E" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="1A126CC55C794B3652F850A7B0398122F0A29FF5" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

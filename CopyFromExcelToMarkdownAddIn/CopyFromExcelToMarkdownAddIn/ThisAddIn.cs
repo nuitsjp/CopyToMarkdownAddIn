@@ -11,7 +11,7 @@ namespace CopyFromExcelToMarkdownAddIn
         /// <summary>
         /// Minimum required select the number of rows.
         /// </summary>
-        private const int MinRowCount = 3;
+        private const int MinRowCount = 2;
         /// <summary>
         /// Alignment Undefined
         /// </summary>
@@ -107,7 +107,10 @@ namespace CopyFromExcelToMarkdownAddIn
                 {
                     var cell = row[j];
                     var activeSheetCell =  (Range)activeSheet.Cells[range.Row + i, range.Column + j];
-                    activeSheetCell.Value2 = cell.Value.Replace("<br>", "\n").Replace("<br/>", "\n");
+                    activeSheetCell.Value2 = cell.Value
+                        .Replace("<br>", "\n")
+                        .Replace("<br/>", "\n")
+                        .Replace("&#124;", "|");
                     switch (cell.Alignment)
                     {
                         case Alignment.Undefined:
@@ -167,7 +170,7 @@ namespace CopyFromExcelToMarkdownAddIn
                 var cell = (Range)range.Cells[1, x];
 
                 resultBuffer.Append("|");
-                resultBuffer.Append(FormatText(cell));
+                resultBuffer.Append(cell.FormatText());
                 switch ((int)cell.HorizontalAlignment)
                 {
                     case AlignmentLeft:
@@ -199,26 +202,13 @@ namespace CopyFromExcelToMarkdownAddIn
                     var cell = (Range)range.Cells[y, x];
 
                     resultBuffer.Append("|");
-                    resultBuffer.Append(FormatText(cell));
+                    resultBuffer.Append(cell.FormatText());
                 }
                 resultBuffer.Append("|");
                 resultBuffer.Append(Environment.NewLine);
             }
             Clipboard.SetText(resultBuffer.ToString());
         }
-
-        private static string FormatText(Range range)
-        {
-            if (range == null || range.Text == null)
-            {
-                return string.Empty;
-            }
-            else
-            {
-                return range.Text.Replace("\n", "<br>");
-            }
-        }
-
 
         #region VSTO で生成されたコード
 
