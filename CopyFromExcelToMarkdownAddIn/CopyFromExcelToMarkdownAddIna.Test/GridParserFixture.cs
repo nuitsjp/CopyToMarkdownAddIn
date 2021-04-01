@@ -12,7 +12,7 @@ namespace CopyFromExcelToMarkdownAddIna.Test
     public class GridParserFixture
     {
         [Fact]
-        public void Case01()
+        public void When_starting_with_blank_line_Then_blank_line_will_be_trimmed()
         {
             var grid = new GridParser().Parse(@"		
       
