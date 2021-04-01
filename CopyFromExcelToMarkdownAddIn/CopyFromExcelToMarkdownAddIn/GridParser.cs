@@ -13,7 +13,7 @@ namespace CopyFromExcelToMarkdownAddIn
         {
             var grid = new Grid();
 
-            using (var reader = new StringReader(markdown))
+            using var reader = new StringReader(markdown);
             for(var line = reader.ReadLine(); line != null; line = reader.ReadLine())
             {
                 if(line.Trim().Length ==0) continue;
