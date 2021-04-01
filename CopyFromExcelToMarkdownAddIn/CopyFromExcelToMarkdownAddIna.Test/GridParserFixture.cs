@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CopyFromExcelToMarkdownAddIn;
+using FluentAssertions;
 using Xunit;
 
 namespace CopyFromExcelToMarkdownAddIna.Test
@@ -13,11 +14,22 @@ namespace CopyFromExcelToMarkdownAddIna.Test
         [Fact]
         public void Case01()
         {
-            var grid = new GridParser().Parse(Properties.Resources.GridParserFixture_Case01);
+            var grid = new GridParser().Parse(@"		
+      
+ |0-1| 
+|1-1|1-2
+2-1||2-3|
+");
             Assert.NotNull(grid);
             Assert.Equal(3, grid.Rows.Count);
 
             var row0 = grid.Rows[0];
+            row0.Should()
+                .NotBeNull()
+                .And.ContainSingle();
+            row0[0].Value.Should()
+                .NotBeNull()
+                .And.Be("0-1");
             Assert.NotNull(row0);
             Assert.Single(row0);
             Assert.NotNull(row0[0]);
@@ -45,7 +57,8 @@ namespace CopyFromExcelToMarkdownAddIna.Test
         [Fact]
         public void HasAlignmentRow()
         {
-            var grid = new GridParser().Parse(Properties.Resources.GridParserFixture_HasAlignmentRows);
+            var grid = new GridParser().Parse(@" |0-1| 
+ |:-|-|:-:|-:| ");
             Assert.NotNull(grid);
             Assert.True(grid.HasAlignmentRows);
         }
@@ -53,7 +66,8 @@ namespace CopyFromExcelToMarkdownAddIna.Test
         [Fact]
         public void HasNotAlignmentRow()
         {
-            var grid = new GridParser().Parse(Properties.Resources.GridParserFixture_HasNotAlignmentRows);
+            var grid = new GridParser().Parse(@" |0-1| 
+ |:-|-a|:-:|-:| ");
             Assert.NotNull(grid);
             Assert.False(grid.HasAlignmentRows);
         }
