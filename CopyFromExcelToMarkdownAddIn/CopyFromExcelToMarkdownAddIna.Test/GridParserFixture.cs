@@ -24,12 +24,6 @@ namespace CopyFromExcelToMarkdownAddIna.Test
             Assert.Equal(3, grid.Rows.Count);
 
             var row0 = grid.Rows[0];
-            row0.Should()
-                .NotBeNull()
-                .And.ContainSingle();
-            row0[0].Value.Should()
-                .NotBeNull()
-                .And.Be("0-1");
             Assert.NotNull(row0);
             Assert.Single(row0);
             Assert.NotNull(row0[0]);
