@@ -170,7 +170,15 @@ namespace CopyFromExcelToMarkdownAddIn
                 var cell = (Range)range.Cells[1, x];
 
                 resultBuffer.Append("|");
-                resultBuffer.Append(cell.FormatText());
+                if (cell.Hyperlinks.Count > 0)
+                {
+                    resultBuffer.Append("[").Append(cell.FormatText()).Append("]")
+                            .Append("(").Append(cell.Hyperlinks[1].Address).Append(")");
+                }
+                else
+                {
+                    resultBuffer.Append(cell.FormatText());
+                }
                 switch ((int)cell.HorizontalAlignment)
                 {
                     case AlignmentLeft:
@@ -202,7 +210,15 @@ namespace CopyFromExcelToMarkdownAddIn
                     var cell = (Range)range.Cells[y, x];
 
                     resultBuffer.Append("|");
-                    resultBuffer.Append(cell.FormatText());
+                    if (cell.Hyperlinks.Count > 0)
+                    {
+                        resultBuffer.Append("[").Append(cell.FormatText()).Append("]")
+                            .Append("(").Append(cell.Hyperlinks[1].Address).Append(")");
+                    }
+                    else
+                    {
+                        resultBuffer.Append(cell.FormatText());
+                    }
                 }
                 resultBuffer.Append("|");
                 resultBuffer.Append(Environment.NewLine);
