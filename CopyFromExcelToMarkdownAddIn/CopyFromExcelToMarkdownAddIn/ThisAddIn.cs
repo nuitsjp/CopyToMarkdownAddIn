@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Excel;
@@ -107,7 +108,14 @@ namespace CopyFromExcelToMarkdownAddIn
                 {
                     var cell = row[j];
                     var activeSheetCell =  (Range)activeSheet.Cells[range.Row + i, range.Column + j];
-                    activeSheetCell.Value2 = cell.Value
+                    var value = cell.Value;
+                    var match = Regex.Match(value, "\\[([^\\]]+)\\]\\(([^\\)]+)\\)");
+                    if (match.Success)
+                    {
+                        activeSheet.Hyperlinks.Add(activeSheetCell, match.Groups[2].Value);
+                        value = value.Replace(match.Value, match.Groups[1].Value);
+                    }
+                    activeSheetCell.Value2 = value
                         .Replace("<br>", "\n")
                         .Replace("<br/>", "\n")
                         .Replace("&#124;", "|");
